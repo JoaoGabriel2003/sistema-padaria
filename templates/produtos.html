@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Produtos Cadastrados{% endblock %}
+
+{% block content %}
+<h1>Produtos Cadastrados</h1>
+
+<form method="GET" action="{{ url_for('produtos') }}">
+    <input type="text" name="busca" placeholder="Buscar produto..." value="{{ busca or '' }}">
+    
+    <select name="categoria">
+        <option value="">Todas as categorias</option>
+        <option value="padaria" {% if categoria == 'padaria' %}selected{% endif %}>Padaria</option>
+        <option value="confeitaria" {% if categoria == 'confeitaria' %}selected{% endif %}>Confeitaria</option>
+        <option value="bebida" {% if categoria == 'bebida' %}selected{% endif %}>Bebida</option>
+    </select>
+
+    <input type="submit" value="Buscar">
+</form>
+
+<table>
+    <tr>
+        <th><a href="{{ url_for('produtos', order_by='id', busca=busca, categoria=categoria) }}">ID</a></th>
+        <th><a href="{{ url_for('produtos', order_by='nome', busca=busca, categoria=categoria) }}">Nome</a></th>
+        <th><a href="{{ url_for('produtos', order_by='categoria', busca=busca, categoria=categoria) }}">Categoria</a></th>
+        <th><a href="{{ url_for('produtos', order_by='preco', busca=busca, categoria=categoria) }}">Preço</a></th>
+        <th><a href="{{ url_for('produtos', order_by='quantidade', busca=busca, categoria=categoria) }}">Quantidade</a></th>
+        <th>Ações</th>
+    </tr>
+    {% for produto in produtos %}
+    <tr>
+        <td>{{ produto[0] }}</td>
+        <td>{{ produto[1] }}</td>
+        <td>{{ produto[2] }}</td>
+        <td>R$ {{ "%.2f"|format(produto[3]) }}</td>
+        <td>{{ produto[4] }}</td>
+        <td>
+            <a href="{{ url_for('editar', id=produto[0]) }}">Editar</a> |
+            <a href="{{ url_for('excluir', id=produto[0]) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a class="btn cadastrar" href="{{ url_for('cadastrar') }}">Cadastrar Novo Produto</a>
+{% endblock %}

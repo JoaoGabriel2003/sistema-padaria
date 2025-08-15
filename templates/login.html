@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center;">
+    <img src="{{ url_for('static', filename='logo_padaria.jpg') }}" alt="Logo" style="width: 150px; margin: 20px auto;">
+    
+    <h2 style="color: #5c2e00; margin-bottom: 20px;">Login</h2>
+    
+    <form method="post" style="max-width: 400px; margin: 0 auto;">
+        <div style="margin-bottom: 15px; text-align: left;">
+            <label for="usuario"><strong>Usuário:</strong></label>
+            <input type="text" name="usuario" class="form-control" style="width: 100%;" required>
+        </div>
+
+        <div style="margin-bottom: 15px; text-align: left;">
+            <label for="senha"><strong>Senha:</strong></label>
+            <input type="password" name="senha" class="form-control" style="width: 100%;" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; background-color: #a36b49; border: none;">
+            Entrar
+        </button>
+
+        {% if erro %}
+            <p style="color: red; margin-top: 10px;">{{ erro }}</p>
+        {% endif %}
+    </form>
+
+    <div style="margin-top: 20px;">
+        <a href="{{ url_for('registrar') }}">Registrar-se</a> |
+        <a href="{{ url_for('redefinir_senha') }}">Esqueci minha senha</a>
+    </div>
+</div>
+{% endblock %}

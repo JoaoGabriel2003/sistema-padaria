@@ -1,0 +1,171 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos */
+h1 {
+    color: #5e3c24;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff3e6;
+    border-bottom: 1px solid #e0c9b6;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Menu */
+.menu {
+    background-color: #8B4513;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu a.btn {
+    color: white;
+    padding: 10px 18px;
+    margin: 0 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #a55d2a;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu a.btn:hover {
+    background-color: #864015;
+    transform: scale(1.05);
+}
+
+/* Formulários */
+form {
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* Inputs comuns */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    width: 250px;
+    font-size: 15px;
+}
+
+/* Botões */
+input[type="submit"] {
+    background-color: #a9745d;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #8a5f4b;
+}
+
+/* Tabela */
+table {
+    margin: 30px auto;
+    width: 95%;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+th {
+    background-color: #e0c9b6;
+    color: #3e2723;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f0e7;
+}
+
+/* Links padrão */
+a {
+    color: #6b3e26;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: #eee0d5;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+    color: #6a4a2c;
+    font-size: 14px;
+}
+
+/* Login */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.erro {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sucesso {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Cadastro / Edição de produto */
+.formulario {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario label {
+    font-weight: bold;
+    text-align: left;
+}

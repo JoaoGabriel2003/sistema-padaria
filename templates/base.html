@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Padaria Matriz{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='logo_padaria.jpg') }}" alt="Logo da Padaria" class="logo">
+    </div>
+
+    <!-- Menu de navegação -->
+    <nav class="menu">
+        <a class="btn" href="{{ url_for('index') }}">Início</a>
+        <a class="btn" href="{{ url_for('produtos') }}">Produtos</a>
+        <a class="btn" href="{{ url_for('cadastrar') }}">Cadastrar Produto</a>
+        <a class="btn sair" href="{{ url_for('logout') }}">Sair</a>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        Sistema de Gestão Padaria Matriz © 2025
+    </footer>
+
+</body>
+</html>

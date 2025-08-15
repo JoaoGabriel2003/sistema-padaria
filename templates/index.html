@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Início - Padaria{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 30px;">
+    <h1>Bem-vindo ao sistema da padaria!</h1>
+    <p>Essa é a primeira página feita com Flask 🎉</p>
+    
+    <a class="btn" href="{{ url_for('produtos') }}">Ver produtos</a><br><br>
+    <a class="btn sair" href="{{ url_for('logout') }}">Sair</a>
+</div>
+{% endblock %}
